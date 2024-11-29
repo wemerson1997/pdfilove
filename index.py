@@ -35,6 +35,7 @@ def converter_word_para_pdf(caminho_word, caminho_pdf):
 
 with st.sidebar: "[By Instagram: @wemersonsilva_](https://www.instagram.com/wemersonsillva_/)"
 with st.sidebar: "[By Linkedin: @wemersonsilva_](https://www.linkedin.com/in/wemerson-silva-5098071a9/)"
+with st.sidebar: "[By YouTube: @wemersonsilva_](https://www.linkedin.com/in/wemerson-silva-5098071a9/)"
 if funcionalidade == "Unir PDFs":
     st.subheader("Unir Múltiplos PDFs :sparkles:")
     pdf_files = st.file_uploader("Envie os arquivos PDF para unir", type="pdf", accept_multiple_files=True)
