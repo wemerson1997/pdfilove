@@ -81,7 +81,7 @@ elif funcionalidade == "Dividir PDF":
                 st.error(f"Erro ao dividir PDF: {e}")
 
 
-elif funcionalidade == "Converter Word para PDF":
+'''elif funcionalidade == "Converter Word para PDF":
     st.subheader("Converter Word para PDF")
     word_file = st.file_uploader("Envie o arquivo Word para converter", type=["docx", "doc"])
     if st.button("Converter para PDF"):
@@ -106,4 +106,4 @@ elif funcionalidade == "Converter Word para PDF":
             if path.exists(pdf_output):
                 remove(pdf_output)
         else:
-            st.warning("Por favor, envie um arquivo Word.")
+            st.warning("Por favor, envie um arquivo Word.")'''
