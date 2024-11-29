@@ -1,8 +1,8 @@
 import streamlit as st
 from PyPDF2 import PdfMerger, PdfReader, PdfWriter
-from comtypes.client import CreateObject
-from comtypes import CoInitialize, CoUninitialize
-from os import path, remove
+#from comtypes.client import CreateObject
+#from comtypes import CoInitialize, CoUninitialize
+#from os import path, remove
 
 
 # Configuração da página
