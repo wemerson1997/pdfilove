@@ -1,7 +1,6 @@
 import streamlit as st
 from PyPDF2 import PdfMerger, PdfReader, PdfWriter
-#from comtypes.client import CreateObject
-#from comtypes import CoInitialize, CoUninitialize
+
 #from os import path, remove
 
 
@@ -15,23 +14,6 @@ funcionalidade = st.sidebar.selectbox(
     "O que você quer fazer?",
     ["Unir PDFs", "Dividir PDF", "Compactar PDF", "Proteger PDF", "Converter Word para PDF", "Converter Imagem em PDF"]
 )
-# Função: Converter Word para PDF
-def converter_word_para_pdf(caminho_word, caminho_pdf):
-    """
-    Converte um arquivo Word (.docx) em PDF.
-    """
-    try:
-        CoInitialize()  # Inicializa o sistema COM
-        word = CreateObject("Word.Application")
-        doc = word.Documents.Open(caminho_word)
-        doc.SaveAs(caminho_pdf, FileFormat=17)  # 17 corresponde ao formato PDF
-        doc.Close()
-        word.Quit()
-        return caminho_pdf
-    except Exception as e:
-        return f"Erro ao converter Word para PDF: {e}"
-    finally:
-        CoUninitialize()
 
 with st.sidebar: "[By Instagram: @wemersonsilva_](https://www.instagram.com/wemersonsillva_/)"
 with st.sidebar: "[By Linkedin: @wemersonsilva_](https://www.linkedin.com/in/wemerson-silva-5098071a9/)"
@@ -80,30 +62,3 @@ elif funcionalidade == "Dividir PDF":
             except Exception as e:
                 st.error(f"Erro ao dividir PDF: {e}")
 
-
-'''elif funcionalidade == "Converter Word para PDF":
-    st.subheader("Converter Word para PDF")
-    word_file = st.file_uploader("Envie o arquivo Word para converter", type=["docx", "doc"])
-    if st.button("Converter para PDF"):
-        if word_file:
-            # Salvar o arquivo Word enviado
-            word_temp = word_file.name
-            with open(word_temp, "wb") as f:
-                f.write(word_file.read())
-
-            # Nome do arquivo PDF gerado
-            pdf_output = word_temp.replace(".docx", ".pdf").replace(".doc", ".pdf")
-            resultado = converter_word_para_pdf(word_temp, pdf_output)
-
-            if "Erro" in resultado:
-                st.error(resultado)
-            else:
-                with open(pdf_output, "rb") as f:
-                    st.download_button("Baixar PDF Convertido", f, file_name=pdf_output)
-
-            # Limpeza do arquivo temporário
-            remove(word_temp)
-            if path.exists(pdf_output):
-                remove(pdf_output)
-        else:
-            st.warning("Por favor, envie um arquivo Word.")'''
